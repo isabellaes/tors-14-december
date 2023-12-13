@@ -7,7 +7,7 @@ I denna övning ska du få fixa till en e-handelssida som inte fungerar. En anv�
 ### Level 1
 
 På denna nivå är er utmaning att lösa så sidan fungerar och det går att lägga till en produkt i varukorgen.
-All HTML, CSS och Javascript som ni behöver finns. Testa er fram och använd konsolen i Chrome developer tools för att se eventuella Javascript fel. När sidan funkar har ni löst det. **Ni behöver inte skriva någon ny JS-kod utan all kod som behövs finns.**
+All HTML, CSS och viss Javascript som ni behöver finns. Testa er fram och använd konsolen i Chrome developer tools för att se eventuella Javascript fel. När sidan funkar har ni löst det.
 
 Se gi nedan på hur det ska fungera.
 
