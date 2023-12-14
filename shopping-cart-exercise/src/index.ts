@@ -5,14 +5,19 @@ const openCartButton: HTMLElement | null = document.querySelector("#open-cart");
 const cartNumber: HTMLElement = document.getElementById("productsInCart");
 
 function updateCart(button): void {
-  shoppingCart.push(button.parentElement.dataset.product);
-  listProductsInCart(button.parentElement.dataset.product);
-  cartNumber.innerHTML = shoppingCart.length.toString();
+  const exists = shoppingCart.find(
+    (x) => x === button.parentElement.dataset.product
+  );
+  if (exists != undefined) {
+    alert("Du har redan lagt till denna produkt!");
+  } else {
+    shoppingCart.push(button.parentElement.dataset.product);
+    listProductsInCart(button.parentElement.dataset.product);
+    cartNumber.innerHTML = shoppingCart.length.toString();
+  }
 }
 
 function addClickEvent(): void {
-  // Void betyder att funktionen ej returnerar något värde
-  // För att kunna använda parentElement behöver vi göra om det till ett HTMLElement istället för typen EventTarget
   productButtons.forEach((button) => {
     button.addEventListener("click", () => {
       updateCart(button);

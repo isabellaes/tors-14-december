@@ -4,13 +4,17 @@ const cart = document.querySelector("#cart");
 const openCartButton = document.querySelector("#open-cart");
 const cartNumber = document.getElementById("productsInCart");
 function updateCart(button) {
-    shoppingCart.push(button.parentElement.dataset.product);
-    listProductsInCart(button.parentElement.dataset.product);
-    cartNumber.innerHTML = shoppingCart.length.toString();
+    const exists = shoppingCart.find((x) => x === button.parentElement.dataset.product);
+    if (exists != undefined) {
+        alert("Du har redan lagt till denna produkt!");
+    }
+    else {
+        shoppingCart.push(button.parentElement.dataset.product);
+        listProductsInCart(button.parentElement.dataset.product);
+        cartNumber.innerHTML = shoppingCart.length.toString();
+    }
 }
 function addClickEvent() {
-    // Void betyder att funktionen ej returnerar något värde
-    // För att kunna använda parentElement behöver vi göra om det till ett HTMLElement istället för typen EventTarget
     productButtons.forEach((button) => {
         button.addEventListener("click", () => {
             updateCart(button);
